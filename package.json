@@ -1,0 +1,17 @@
+{
+  "author": "Travis Collins <travis@tec27.com> (http://tec27.com)",
+  "name": "argyle",
+  "description": "Basic SOCKS5 server libary",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tec27/node-argyle.git"
+  },
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
