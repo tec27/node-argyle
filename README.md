@@ -21,10 +21,10 @@ server.on('connected', function(req, dest) {
 });
 ```
 
-###Example: Throttled proxy server using node-throttled-stream
+###Example: Throttled proxy server using [node-throttled-stream](https://github.com/tec27/node-throttled-stream)
 ```javascript
 var argyle = require('argyle'),
-	throttle = require('./throttled-stream'),
+	throttle = require('throttled-stream'),
 	kbpsUp = 32,
 	kbpsDown = 128;
 
