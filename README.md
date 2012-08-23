@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/tec27/node-argyle.png)](http://travis-ci.org/tec27/node-argyle)
 #argyle
 A basic SOCKS5 server library written for node.js.
 
