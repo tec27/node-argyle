@@ -5,14 +5,18 @@ var net = require('net')
 
 var debugOut = console.log.bind(console)
 
-module.exports = function(port, host, debug) {
+module.exports = function(port, host, backlog, debug) {
   if(!port) port = 8080
   if(!host) host = '127.0.0.1'
+  if(typeof backlog === 'boolean') {
+    debug = backlog
+    backlog = undefined
+  }
 
-  return new Argyle(port, host, debug)
+  return new Argyle(port, host, backlog, debug)
 }
 
-function Argyle(port, host, debug) {
+function Argyle(port, host, backlog, debug) {
   Argyle.super_.call(this)
   var self = this
 
@@ -27,7 +31,11 @@ function Argyle(port, host, debug) {
     self.handleConnection(client)
   })
 
-  this.serverSock.listen(port, host)
+  if(backlog) {
+    this.serverSock.listen(port, host, backlog)
+  } else {
+    this.serverSock.listen(port, host)
+  }
 }
 util.inherits(Argyle, EventEmitter);
 
