@@ -1,7 +1,7 @@
-#argyle
+# argyle
 A basic SOCKS5 server library written for node.js.
 
-##Features/Limitations
+## Features/Limitations
 argyle supports the most basic features of SOCKS and not a whole lot more, namely:
 
 - 'No authentication' auth mode *only*
@@ -9,8 +9,8 @@ argyle supports the most basic features of SOCKS and not a whole lot more, namel
 
 In the future I may add support for more auth modes and commands, but currently this implementation works well for my main use case (sitting between a local browser and server).
 
-##Usage
-###Example: "Normal" proxy server
+## Usage
+### Example: "Normal" proxy server
 ```javascript
 var argyle = require('argyle');
 
@@ -21,7 +21,7 @@ server.on('connected', function(req, dest) {
 });
 ```
 
-###Example: Throttled proxy server using [node-throttled-stream](https://github.com/tec27/node-throttled-stream)
+### Example: Throttled proxy server using [node-throttled-stream](https://github.com/tec27/node-throttled-stream)
 ```javascript
 var argyle = require('argyle'),
 	throttle = require('throttled-stream'),
@@ -45,20 +45,20 @@ server.on('connected', function(req, dest) {
 });
 ```
 
-##Methods
-###argyle([port = 8080], [host = 127.0.0.1], [debug = false])
+## Methods
+### argyle([port = 8080], [host = 127.0.0.1], [debug = false])
 Sets up a new SOCKS server on the specified port and host. If debug is specified, the server will output messages about the status of connections.
 
-##Events
-###'connected'
+## Events
+### 'connected'
 A new client connected to the server and the socket to their requested destination is now open. Handlers for this event are passed a `request` socket, corresponding to the client that made the request from the server, and a `destination` socket, corresponding to the server that they requested to connect to.
 
-##Installation
+## Installation
 With npm:
 
 ```
 npm install argyle
 ```
 
-##License
+## License
 WTFPL
